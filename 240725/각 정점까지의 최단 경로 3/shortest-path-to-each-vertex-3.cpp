@@ -34,18 +34,12 @@ int main() {
         }
     }
 
-    bool impossible = false;
+
     for (int i = 1; i < N; i++) {
-        if (dists[i] == MAX_VALUE) impossible = true;
+        if (dists[i] == MAX_VALUE) cout << -1 << "\n";
+        else cout << dists[i] << "\n";
     }
-
-    if (impossible) cout << -1;
-    else {
-        for (int i = 1; i < N; i++) {
-            cout << dists[i] << "\n";
-        }
-    }
-
+    
     return 0;
 }
 
