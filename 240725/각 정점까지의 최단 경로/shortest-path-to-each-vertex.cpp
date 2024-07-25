@@ -59,6 +59,7 @@ void getInput() {
     for (int i = 0; i < M; i++) {
         cin >> start >> end >> value;
         edge[start - 1].push_back(make_pair(value, end - 1));
+        edge[end - 1].push_back(make_pair(value, start - 1));
     }
 
     return;
