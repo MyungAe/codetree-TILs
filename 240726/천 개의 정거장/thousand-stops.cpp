@@ -40,9 +40,14 @@ int main() {
             }
         }
     }
+
+    for (int i = 0; i < N; i++) {
+        cout << dists[i] << " ";
+    }
+    cout << "\n";
     
-    if (dists[B - 1] == 1e9) cout << "-1 -1 \n";
-    else cout << dists[B - 1] << " " << times[B - 1] << "\n";
+    // if (dists[B - 1] == 1e9) cout << "-1 -1 \n";
+    // else cout << dists[B - 1] << " " << times[B - 1] << "\n";
 
     return 0;
 }
