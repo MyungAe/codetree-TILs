@@ -8,17 +8,18 @@ void getInput();
 void initData();
 
 int A, B, N;
-vector<vector<tuple<int, int, int>>> edges;
-vector<int> dists;
-vector<int> times;
-priority_queue<tuple<int, int, int>> pq;
+vector<vector<tuple<long long, int, int>>> edges;
+vector<long long> dists;
+vector<long long> times;
+priority_queue<tuple<long long, int, int>> pq;
 
 int main() {
     getInput();
     initData();
 
     while(!pq.empty()) {
-        int dist, start, bus;
+        long long dist;
+        int start, bus;
         tie(dist, start, bus) = pq.top();
         pq.pop();
 
@@ -27,7 +28,8 @@ int main() {
         // cout << start << " " << -dist << " " << bus << endl;
 
         for (int i = 0; i < edges[start].size(); i++) {
-            int dist2, end, bus2;
+            long long dist2;
+            int end, bus2;
             tie(dist2, end, bus2) = edges[start][i];
             
             bool isSameBus = bus == bus2;
@@ -52,7 +54,7 @@ int main() {
     // }
     // cout << "\n";
     
-    if (dists[B - 1] == 1e9) cout << "-1 -1 \n";
+    if (dists[B - 1] == 1e18) cout << "-1 -1 \n";
     else cout << dists[B - 1] << " " << times[B - 1] << "\n";
 
     return 0;
@@ -60,8 +62,8 @@ int main() {
 
 void initData() {
     for (int i = 0; i < 1000; i++) {
-        dists.push_back(1e9);
-        times.push_back(1e9);
+        dists.push_back(1e18);
+        times.push_back(1e18);
     }
     dists[A - 1] = 0;
     times[A - 1] = 0;
@@ -71,7 +73,6 @@ void initData() {
 
 void getInput() {
     edges.resize(1000);
-
     cin >> A >> B >> N;
     int price, cnt, start, end;
 
@@ -85,15 +86,6 @@ void getInput() {
             start = end - 1;
         }
     }
-
-    // for (int i = 0; i < 1000; i++) {
-    //     for (int j = 0; j < edges[i].size(); j++) {
-    //         int dist, end, bus;
-    //         tie(dist, end, bus) = edges[i][j];
-
-    //         cout << i << " " << end << " " << dist << " " << bus << endl;
-    //     }
-    // }
 
     return;
 }
