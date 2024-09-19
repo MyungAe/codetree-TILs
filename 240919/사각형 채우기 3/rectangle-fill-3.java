@@ -20,7 +20,7 @@ public class Main {
             for (int j = i - 3; j >= 0; j--) {
                 dp[i] += 2 * dp[j];
             }
-            dp[i] %= 10007;
+            dp[i] %= 1000000007;
         }
 
         return dp[N];
