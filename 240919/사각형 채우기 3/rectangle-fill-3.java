@@ -13,11 +13,16 @@ public class Main {
     }
 
     public static int step(int N) {
-        if (dp[N] != -1) return dp[N];
-        // if (N == 0) return dp[N] = 0;
-        if (N == 1) return dp[N] = 2;
-        if (N == 2) return dp[N] = 7;
+        dp[0] = 1; dp[1] = 2;
+        
+        for (int i = 2; i <= N; i++) {
+            dp[i] = 2 * dp[i - 1] + 3 * dp[i - 2];
+            for (int j = i - 3; j >= 0; j--) {
+                dp[i] += 2 * dp[j];
+            }
+            dp[i] %= 10007;
+        }
 
-        return dp[N] = (step(N - 1) * step(1) + step(N - 1) * step(N - 2)) % 10007;
+        return dp[N];
     }
 }
