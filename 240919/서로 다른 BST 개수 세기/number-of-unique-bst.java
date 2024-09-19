@@ -1,22 +1,29 @@
-import java.util.*;
-import java.io.*;
+import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) throws Exception {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int N = Integer.parseInt(br.readLine());
-
-        System.out.println(step(N));
+    public static final int MAX_NUM = 19;
+    
+    public static int[] dp = new int[MAX_NUM + 1];
+    
+    public static int numOfUniqueBST(int n) {
+        int numberOfUniqueBst = 0;
+    
+        for(int i = 0; i < n; i++)
+            numberOfUniqueBst += dp[i] * dp[n - i - 1];
+    
+        return numberOfUniqueBst;
     }
 
-    public static int step(int N) {
-        int[] dp = new int[20];
-        dp[1] = 1; dp[2] = 2; dp[3] = 5;
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
 
-        for (int i = 4; i <= N; i++) {
-            dp[i] = 2 * (dp[i - 1] + dp[i - 2]);
-        }
+        dp[0] = 1;
+        dp[1] = 1;
 
-        return dp[N];
+        for(int i = 2; i <= n; i++)
+            dp[i] = numOfUniqueBST(i);
+
+        System.out.print(dp[n]);
     }
 }
