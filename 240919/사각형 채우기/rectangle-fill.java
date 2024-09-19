@@ -18,6 +18,6 @@ public class Main {
         if (N == 1) return dp[N] = 1;
         if (N == 2) return dp[N] = 2;
 
-        return dp[N] = step(N - 1) + step(N - 2);
+        return dp[N] = (step(N - 1) + step(N - 2)) % 10007;
     }
 }
