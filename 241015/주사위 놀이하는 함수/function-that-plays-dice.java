@@ -18,7 +18,11 @@ public class Main {
 
     public static void Permutation(int idx, int t) {
         if (idx == N) {
-            sb.append(nums[0] + "-" + nums[1] + "-" + nums[2] + "\n");
+            for (int i = 0; i < N - 1; i++) {
+                sb.append(nums[i] + "-");
+            }
+            sb.append(nums[N-1] + "\n");
+            
             return;
         }
 
