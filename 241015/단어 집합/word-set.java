@@ -7,7 +7,7 @@ public class Main {
         StringBuilder sb = new StringBuilder();
         StringTokenizer st;
 
-        boolean[] flag = new boolean[26];
+        HashSet<String> set = new HashSet<String>();
         String str = br.readLine();
 
         while(!str.equals("end")) {
@@ -15,12 +15,12 @@ public class Main {
             int size = st.countTokens();
 
             for (int i = 0; i < size; i++) {
-                char c = st.nextToken().charAt(0);
-                flag[c - 97] = true;
+                String s = st.nextToken();
+                set.add(s);
             }
 
-            for (int i = 0; i < 26; i++) {
-                if (flag[i]) sb.append((char) (i + 97) + " ");
+            for (String s : set) {
+                sb.append(s + " ");
             }
 
             sb.append("\n");
