@@ -1,1 +1,1 @@
-console.log(`He says "it's a really simple sentense".`);
+console.log(`He says "It's a really simple sentence".`);
