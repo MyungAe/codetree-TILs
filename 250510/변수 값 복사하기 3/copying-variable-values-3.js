@@ -6,4 +6,6 @@ a = c;
 a = a + c;
 b = b - c;
 
-console.log(`${a} ${b} ${c}`)
+console.log(a);
+console.log(b);
+console.log(c);
