@@ -1,5 +1,3 @@
 let str = require('fs').readFileSync(0).toString().trim();
 
-str[1] = 'a';
-str[str.length - 2] = 'a';
-console.log(str);
+console.log(str.replace(1, 'a').replace(str.length - 2, 'a'));
