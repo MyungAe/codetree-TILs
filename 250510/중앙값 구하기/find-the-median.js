@@ -1,3 +1,3 @@
-const [A, B, C] = require('fs').readFileSync(0).toString().trim().split(' ').map(e => Number(e));
+const input = require('fs').readFileSync(0).toString().trim().split(' ').map(e => Number(e));
 
-console.log((A + B + C) / 3);
+console.log(input.sort()[Math.floor(input.length / 2)]);
