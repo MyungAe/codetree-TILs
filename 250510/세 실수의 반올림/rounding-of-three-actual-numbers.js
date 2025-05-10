@@ -1,10 +1,8 @@
-const readline = require('readline');
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 
-const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout,
-});
+// 입력받은 세 줄 출력
 
-rl.question('', (answer) => {
-console.log(Math.round(Number(answer)));
+input.forEach((str) => {
+    console.log(Number(str).toFixed(3));
 });
