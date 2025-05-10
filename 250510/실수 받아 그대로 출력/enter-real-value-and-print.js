@@ -6,6 +6,6 @@ const rl = readline.createInterface({
 });
 
 rl.question('', (answer) => {
-    console.log(answer.toFixed(2));
+    console.log(parseFloat(answer).toFixed(2));
     rl.close();
 });
