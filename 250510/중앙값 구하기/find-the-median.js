@@ -1,3 +1,3 @@
-const input = require('fs').readFileSync(0).toString().trim().split(' ').map(e => Number(e));
+const arr = require('fs').readFileSync(0).toString().trim().split(' ').map(e => Number(e));
 
-console.log(input.sort()[Math.floor(input.length / 2)]);
+console.log(arr.sort((a, b) => a - b)[1]);
