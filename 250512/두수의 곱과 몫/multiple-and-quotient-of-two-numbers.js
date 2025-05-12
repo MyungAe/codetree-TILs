@@ -1,4 +1,4 @@
 const [a, b] = require('fs').readFileSync(0).toString().trim().split(' ').map(e => Number(e));
 
 console.log('%d * %d = %d', a, b, a*b);
-console.log('%d / %d = %f', a, b, (a/b).toFixed(1));
+console.log(`${a} / ${b} = ${a / b}`);
