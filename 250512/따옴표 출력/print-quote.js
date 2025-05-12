@@ -1,0 +1,1 @@
+console.log(`He says "It's really simple sentence".`);
