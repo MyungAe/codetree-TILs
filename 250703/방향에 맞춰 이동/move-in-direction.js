@@ -16,7 +16,8 @@ const directionMap = {
     'W' : 3
 };
 
-moves.forEach(([direction, value]) => {
+moves.forEach(element => {
+    const [direction, value] = element.split(' ');
     location[0] += dx[directionMap[direction]] * value;
     location[1] += dy[directionMap[direction]] * value;
 })
